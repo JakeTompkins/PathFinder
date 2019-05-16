@@ -1,13 +1,82 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 90%;
+  width: 40%;
+}
+
+.title {
+  font-size: 5em;
+}
+
+.row {
+  display: flex;
+}
+
+.node {
+  height: 50px;
+  width:50px;
+  border: 1px solid black;
+  color: blue;
+}
+
+.unpassable {
+  background-color: black;
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
+}
+
+.button {
+  text-align: center;
+  font-size: 3em;
+}
+
+.passed {
+  background-color: grey;
+}
+
+.start {
+  background-color: green;
+}
+
+.end {
+  background-color: red;
+}
+
+.instructions {
+  height: 90%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+p {
+  text-align: center;
+  font-size: 1em;
 }
