@@ -1,6 +1,5 @@
 import React from 'react';
-import Grid from './containers/grid'
-import Instructions from './components/instructions'
+import Grid from './containers/knownGrid'
 
 function App() {
   return (
@@ -9,9 +8,7 @@ function App() {
       <div className="container">
         <Grid height={10}
           width={10} />
-        {/* <Instructions /> */}
       </div>
-
     </div>
   )
 }
