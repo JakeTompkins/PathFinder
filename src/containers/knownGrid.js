@@ -78,6 +78,10 @@ class Grid extends Component {
     const start = this.getRandomCell()
     const end = this.getRandomCell()
 
+    if (start === end) {
+      return this.setRandomStartAndEnd()
+    }
+
     end.setDistance(0)
 
     this.setState({
@@ -119,7 +123,6 @@ class Grid extends Component {
 
   nextStep = cell => {
     const adjacents = this.getAdjacents(cell)
-    console.log(adjacents)
 
     let min = null
     let minCell = null
@@ -141,7 +144,7 @@ class Grid extends Component {
     const intId = setInterval(() => {
 
       currentCell = this.nextStep(currentCell)
-      if (currentCell === this.state.end) {
+      if (currentCell === this.state.end || currentCell === null) {
         return clearInterval(intId)
       }
       currentCell.togglePassed()
@@ -168,15 +171,19 @@ class Grid extends Component {
   }
 
   render() {
+    let rowNum = 0
     return (
       <div className="grid">
         {
           this.state.matrix.map(row => {
+            rowNum++
             return (
-              <div className="row">
+              <div className="row"
+                key={rowNum}>
                 {
                   row.map(cell => {
                     return <Node
+                      key={`${cell.row}${cell.col}`}
                       passed={cell.passed}
                       passable={cell.passable}
                       start={cell === this.state.start}
