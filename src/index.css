@@ -1,3 +1,7 @@
+body {
+  color: #70798C;
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -32,11 +36,14 @@
   height: 50px;
   width:50px;
   border: 1px solid black;
-  color: blue;
+  /* background-color: #52489C; */
+  background-color: #DDFFF7;
+  transition: background-color .5s ease-in-out;
 }
 
 .unpassable {
-  background-color: black;
+  background-color: #001011;
+  transition: background-color .5s ease-in-out;
 }
 
 .buttonRow {
@@ -52,15 +59,16 @@
 }
 
 .passed {
-  background-color: grey;
+  background-color: #2D93AD;
+  transition: background-color .5s ease-in-out;
 }
 
 .start {
-  background-color: green;
+  background-color: #76DBC2;
 }
 
 .end {
-  background-color: red;
+  background-color: #D1495B
 }
 
 .instructions {
