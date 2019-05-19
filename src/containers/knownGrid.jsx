@@ -1,29 +1,7 @@
 import React, { Component } from 'react'
 import Node from "../components/node"
 import Queue from '../queue'
-
-class Cell {
-  constructor(options) {
-    this.row = options.row
-    this.col = options.col
-    this.passable = true
-    this.passed = false
-    this.distance = null
-    this.revealed = options.revealed || true
-  }
-
-  togglePassable = () => {
-    this.passable = !this.passable
-  }
-
-  togglePassed = () => {
-    this.passed = !this.passed
-  }
-
-  setDistance = distance => {
-    this.distance = distance
-  }
-}
+import Cell from "../cell"
 
 class Grid extends Component {
   constructor(props) {
@@ -188,7 +166,7 @@ class Grid extends Component {
                       passable={cell.passable}
                       start={cell === this.state.start}
                       end={cell === this.state.end}
-                      revealed={cell.revealed}
+                      hidden={cell.hidden}
                       onClick={() => this.onCellClick(cell)}
                     />
                   })

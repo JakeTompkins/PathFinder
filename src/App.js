@@ -1,13 +1,18 @@
 import React from 'react';
-import Grid from './containers/knownGrid'
+import KnownGrid from './containers/knownGrid'
+import UnknownGrid from "./containers/unknownGrid"
 
 function App() {
   return (
     <div className="main">
       <h1 className="title">PathFinder</h1>
       <div className="container">
-        <Grid height={10}
-          width={10} />
+        {/* <KnownGrid height={10}
+          width={10} /> */}
+          <UnknownGrid
+          height={10}
+          width={10}
+          />
       </div>
     </div>
   )

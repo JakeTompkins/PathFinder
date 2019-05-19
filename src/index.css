@@ -42,7 +42,7 @@ body {
 }
 
 .unpassable {
-  background-color: #001011;
+  background-color: grey;
   transition: background-color .5s ease-in-out;
 }
 
@@ -69,6 +69,11 @@ body {
 
 .end {
   background-color: #D1495B
+}
+
+.hidden {
+  background-color: #001011;
+  transition: background-color .5s ease-in-out
 }
 
 .instructions {
