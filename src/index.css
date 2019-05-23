@@ -10,7 +10,9 @@ body {
 
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
@@ -36,7 +38,6 @@ body {
   height: 50px;
   width:50px;
   border: 1px solid black;
-  /* background-color: #52489C; */
   background-color: #DDFFF7;
   transition: background-color .5s ease-in-out;
 }
@@ -51,11 +52,13 @@ body {
   justify-content: space-around;
   align-items: center;
   width: 60%;
+  min-width: 400px;
 }
 
 .button {
   text-align: center;
   font-size: 3em;
+  cursor: pointer;
 }
 
 .passed {
@@ -77,12 +80,8 @@ body {
 }
 
 .instructions {
-  height: 90%;
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 h1 {

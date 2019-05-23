@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Node from "../components/node"
 import Queue from '../queue'
 import Cell from "../cell"
+import Instructions from "../components/instructions"
 
 class Grid extends Component {
   constructor(props) {
@@ -11,6 +12,8 @@ class Grid extends Component {
       start: null,
       end: null
     }
+
+    this.instructions = "This is a Breadth-First algorithm used to determine the shortest possible route from the green start square to the red end square. It assumes that the computer has knowledge of the full state of the board. Create a maze for it to solve by clicking on squares to make them unpassable. Be sure not to block either square in completely!"
   }
 
   componentDidMount() {
@@ -26,6 +29,7 @@ class Grid extends Component {
 
       for (let col = 0; col < width; col++) {
         const cell = new Cell({ row, col })
+        cell.passable = true;
 
         arr.push(cell)
       }
@@ -174,6 +178,9 @@ class Grid extends Component {
               </div>
             )
           })
+        }
+        {
+          <Instructions text={this.instructions} />
         }
         <div className="buttonRow">
           <div className="button"
