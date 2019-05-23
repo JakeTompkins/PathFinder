@@ -16,7 +16,7 @@ class UnknownGrid extends Component {
       intId: null
     }
 
-    this.instructions = "This is a Depth-First algorithm used to find a path from the green start square to the red end square. The path it finds will not be optimized due to the computer only being aware of squares that it has traversed and their immediate surroundings. The maze is randomly generated and will sometimes be unpassable, in which case the path will retrace to the start square and come to an end."
+    this.instructions = "This is a Depth-First algorithm used to find a path from the green start square to the red end square. The path it finds will not be optimized due to the computer only being aware of squares that it has traversed. The maze is randomly generated and will sometimes be unpassable, in which case the path will retrace to the start square and come to an end."
   }
 
   componentDidMount() {
@@ -119,15 +119,15 @@ class UnknownGrid extends Component {
 
     let candidates = [up, down, left, right].filter(cell => cell && !cell.visited)
 
-    console.log(candidates)
+    const endCell = candidates.filter(cell => cell === this.state.end)
 
-    return candidates[Math.floor(Math.random() * candidates.length)]
+    return endCell.length > 0 ? endCell[0] : candidates[Math.floor(Math.random() * candidates.length)]
   }
 
   nextStep = cell => {
     const adj = this.getNextAdjacent(cell)
     if (adj) {
-      if (adj != this.state.start && adj != this.state.end) {
+      if (adj !== this.state.start && adj !== this.state.end) {
         adj.toggleHidden()
         this.setState(this.state)
       }
