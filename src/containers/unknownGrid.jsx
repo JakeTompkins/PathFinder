@@ -127,7 +127,7 @@ class UnknownGrid extends Component {
   nextStep = cell => {
     const adj = this.getNextAdjacent(cell)
     if (adj) {
-      if (adj != this.state.start && adj != this.state.end) {
+      if (adj !== this.state.start && adj !== this.state.end) {
         adj.toggleHidden()
         this.setState(this.state)
       }
