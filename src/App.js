@@ -9,11 +9,11 @@ function App() {
       <h1 className="title">PathFinder</h1>
       <div className="container">
         <GridSwitcher
-          grids={[<KnownGrid height={10}
-            width={10} />,
+          grids={[<KnownGrid height={15}
+            width={15} />,
           <UnknownGrid
-            height={10}
-            width={10}
+            height={15}
+            width={15}
           />]} />
       </div>
     </div>
