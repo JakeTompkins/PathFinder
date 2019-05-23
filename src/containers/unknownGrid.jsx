@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Stack from "../stack"
 import Node from "../components/node"
 import Cell from "../cell"
+import Instructions from "../components/instructions"
 
 class UnknownGrid extends Component {
   constructor(props) {
@@ -14,6 +15,8 @@ class UnknownGrid extends Component {
       noPath: false,
       intId: null
     }
+
+    this.instructions = "This is a Depth-First algorithm used to find a path from the green start square to the red end square. The path it finds will not be optimized due to the computer only being aware of squares that it has traversed and their immediate surroundings. The maze is randomly generated and will sometimes be unpassable, in which case the path will retrace to the start square and come to an end."
   }
 
   componentDidMount() {
@@ -124,7 +127,7 @@ class UnknownGrid extends Component {
   nextStep = cell => {
     const adj = this.getNextAdjacent(cell)
     if (adj) {
-      if(adj != this.state.start && adj != this.state.end){
+      if (adj != this.state.start && adj != this.state.end) {
         adj.toggleHidden()
         this.setState(this.state)
       }
@@ -205,6 +208,9 @@ class UnknownGrid extends Component {
               </div>
             )
           })
+        }
+        {
+          <Instructions text={this.instructions} />
         }
         <div className="buttonRow">
           <div className="button"
