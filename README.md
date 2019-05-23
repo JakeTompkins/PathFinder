@@ -1,6 +1,6 @@
 ## PathFinder
 
-PathFinder is a light web app that demonstrates path finding when the computer is aware of the state of the entire grid.
+PathFinder is a light web app that demonstrates two path finding algorithms.
 
 ### Instructions
 
